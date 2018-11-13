@@ -11,9 +11,7 @@ class Navigation extends Component {
                 <Link to='/dashboard'>
                 <img className='logo' src={logo} alt="cool" />
                 </Link>
-                <search>
 
-                </search>
             </div>
         )
     }

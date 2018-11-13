@@ -23,7 +23,7 @@ button{
   background-color:#090809;
   border-color:#BD0609;
   border-radius:8px;
-  font-size: 24px;
+  font-size: 22px;
   color:#E9EDEE;
   width: 120px;
 }
@@ -32,6 +32,12 @@ button:hover{
   transition:.3s;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-input[type=text]{
-  
+input{
+width:300px;
+background-color:E5E9EA;
+border:none;
+border-radius:9px;
+text-align:center;
+border-bottom:1px, solid;
+border-bottom-color:#BD0609;
 }

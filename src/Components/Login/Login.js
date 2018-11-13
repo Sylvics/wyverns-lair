@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import  {Link} from 'react-router-dom';
 
 
 
@@ -20,14 +21,15 @@ class Login extends Component{
                </div>
                <div className='emailText'>
                Password<br/>
-               <input type='text' />
+               <input type='password' />
                
                </div>
              
                </div>
                <div className='buttons'>
 <button>Login</button>
-<button>Register</button>
+<Link to='/welcome'><button >New User?</button></Link>
+
 
                </div>
                

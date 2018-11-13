@@ -1,0 +1,35 @@
+.registerBackground{
+    width:100%;
+    height:100vh;
+    background-image:url('./WinterDragon.jpg');
+    
+    /* z-index:1; */
+    position:fixed;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+}
+.registerBox{
+    width:600px;
+    height:80%;
+    background-color:#26282A;
+    margin:5% 0;
+    border-radius:50px;
+    color:#E5E9EA;
+    font-size:26px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.register{
+    height:80%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+h6{
+    font-size:16px;
+}
+.registrate{
+    width:200px;
+}
