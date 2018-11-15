@@ -5,13 +5,21 @@ const authController = require('./authController')
 require('dotenv').config();
 const app = express();
 app.use(express.json())
+
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
+app.use(session({
+    secret: SESSION_SECRET,
+    resave:false,
+    saveUninitialized:false,
+    
+}))
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
     console.log('database connected')
 })
-
+app.post('/auth/login', authController.loginPlayer)
 app.post('/auth/register',authController.newPlayer)
+app.get('/auth/logout', authController.logout)
 
 app.listen(SERVER_PORT, () =>{
     console.log(`hatching wyverian eggs on port ${SERVER_PORT}`)

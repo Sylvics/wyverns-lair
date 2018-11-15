@@ -42,14 +42,15 @@ class Register extends Component{
     async submitRegistration(){
         let register = {...this.state}
         let res = await axios.post('/auth/register', register)
-        this.setState({result:res})
+        console.log(res.data)
+        this.props.browser.history.push('/dashboard')
 
     }
     render(){
         return(
             <div className='registerBackground'>
                 <form className='registerBox'>
-                {/* {this.state.result.data?<div>{this.state.result.data}</div>:<div></div>} */}
+               
                <div className='welcomeBack'>
                Welcome to the Roost
                </div>
