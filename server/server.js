@@ -2,6 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
 const authController = require('./authController')
+const socket = require('socket.io')
 require('dotenv').config();
 const app = express();
 app.use(express.json())
@@ -20,7 +21,7 @@ massive(CONNECTION_STRING).then(db => {
 app.post('/auth/login', authController.loginPlayer)
 app.post('/auth/register',authController.newPlayer)
 app.get('/auth/logout', authController.logout)
-
+//Server Generic
 app.listen(SERVER_PORT, () =>{
     console.log(`hatching wyverian eggs on port ${SERVER_PORT}`)
 })
