@@ -1,0 +1,27 @@
+.Card{
+    height:300px;
+    width:225px;
+    background-color:#090809;
+    border-radius:8px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+      0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    color:whitesmoke;
+    border:1px; 
+    border-style:solid;
+    border-color:#BD0609;
+    font-size:16px;
+
+}
+
+.CardPicture{
+    width:221px;
+    height:75%;
+    opacity:0;
+    background-image:url('./SmallDragon.jpg');
+    border-radius:8px;
+}
+.CardPicture:hover{
+    transition:.5s;
+   opacity:.75;
+}
