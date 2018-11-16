@@ -2,9 +2,16 @@ import React, {Component} from 'react';
 import './Dashboard.css'
 import {Parallax, Background} from 'react-parallax';
 import Card from './../Card/Card';
-
+import {connect} from 'react-redux';
 
 class Dashboard extends Component {
+    componentDidMount(){
+        console.log('onMount', this.props)
+        if(!this.props.player){
+            this.props.history.push('/')
+        }
+    }
+    
     render(){
         return(
             <div >
@@ -27,4 +34,7 @@ class Dashboard extends Component {
         )
     }
 }
-export default Dashboard;
+function mapStateToProps(state){
+    return state
+}
+export default connect(mapStateToProps)(Dashboard);

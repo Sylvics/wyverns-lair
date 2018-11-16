@@ -19,7 +19,7 @@ module.exports = {
         let result = bcrypt.compareSync(password, foundUser.hashedpass)
         if(result){
             req.session.user = foundUser;
-            res.status(200).send({status:'loggedIn', user:req.session.user})
+            res.status(200).send({status:'loggedIn', user:req.session.user.player_name})
         }else{
             console.log('invalid user or pass')
             res.status(401).send('invalid username or password');
@@ -27,7 +27,7 @@ module.exports = {
     },
     async logout(req,res){
         req.session.destroy();
-        res.status(200).send('user logged out')
+        res.status(200).send('user logged out');
     }
     
 }
