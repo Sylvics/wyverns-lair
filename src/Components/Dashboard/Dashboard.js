@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './Dashboard.css'
-import {Parallax, Background} from 'react-parallax';
+import {Parallax} from 'react-parallax';
 import Card from './../Card/Card';
 import {connect} from 'react-redux';
 
 class Dashboard extends Component {
     componentDidMount(){
         console.log('onMount', this.props)
-        if(!this.props.player){
+        if(!this.props.playerName){
             this.props.history.push('/')
         }
     }

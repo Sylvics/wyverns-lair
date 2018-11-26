@@ -13,9 +13,16 @@ class Navigation extends Component {
                 <Link to='/dashboard'>
                 <img className='logo' src={logo} alt="cool" />
                 </Link>
-            
+               {this.props.playerName? <Link to='/settings' style={{textDecoration: 'none', color:'whitesmoke'}}>
+                Welcome Back, {this.props.playerName}
+                </Link> : ''
+            }
+           
             </div>
         )
     }
 }
-export default connect()(Navigation);
+function mapStateToProps(state){
+    return state;
+}
+export default connect(mapStateToProps)(Navigation);

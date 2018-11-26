@@ -1,0 +1,10 @@
+create table Classes(Class_id serial primary key,
+ Class_Name varchar(80),
+  Alignment varchar(80),
+   Hitdie varchar(40),
+    class_Skills text,
+     SkillPtIni varchar(80),
+     SkillPt varchar(80),
+      Weapon_Proficiency varchar(80),
+       Armor_Proficiency varchar(80),
+ Shield_Proficiency varchar(80))

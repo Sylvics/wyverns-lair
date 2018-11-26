@@ -1,5 +1,5 @@
 const initialState = {
-player:''
+playerName:''
 }
 const PLAYERDATA = 'USERDATA'
 
@@ -7,7 +7,7 @@ const PLAYERDATA = 'USERDATA'
 export default function reducer(state=initialState, action){
     switch(action.type){
         case PLAYERDATA:
-        return{...state, player:action.payload}
+        return{...state, playerName:action.payload}
         default:
         return state;
     }
