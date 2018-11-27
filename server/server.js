@@ -21,6 +21,7 @@ massive(CONNECTION_STRING).then(db => {
 app.post('/auth/login', authController.loginPlayer)
 app.post('/auth/register',authController.newPlayer)
 app.get('/auth/logout', authController.logout)
+app.get('/auth/check', authController.checkLogin)
 //Server Generic
 app.listen(SERVER_PORT, () =>{
     console.log(`hatching wyverian eggs on port ${SERVER_PORT}`)

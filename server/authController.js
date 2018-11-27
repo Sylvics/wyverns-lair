@@ -28,6 +28,11 @@ module.exports = {
     async logout(req,res){
         req.session.destroy();
         res.status(200).send('user logged out');
+    },
+    async checkLogin(req,res){
+        if(req.session.user) res.send(req.session.user).status(200)
+        else{
+            res.send('No session found').status(200)
+        }
     }
-    
 }

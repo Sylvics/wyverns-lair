@@ -3,13 +3,22 @@ import './Dashboard.css'
 import {Parallax} from 'react-parallax';
 import Card from './../Card/Card';
 import {connect} from 'react-redux';
+import axios from 'axios';
+import {updateSession} from './../../ducks/reducer'
 
 class Dashboard extends Component {
-    componentDidMount(){
-        console.log('onMount', this.props)
-        if(!this.props.playerName){
-            this.props.history.push('/')
-        }
+    async componentDidMount(){
+        // console.log('onMount', this.props)
+        // if(!this.props.playerName){
+        //     this.props.history.push('/')
+        // }
+    let session = await axios.get('/auth/check')
+    if(session!=='No session found'){
+        this.props.updateSession(session);
+        console.log(this.props.session);
+    }else{
+        this.props.history.push('/');
+    }
     }
     
     render(){
@@ -35,6 +44,6 @@ class Dashboard extends Component {
     }
 }
 function mapStateToProps(state){
-    return state
+    return state;
 }
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, {updateSession})(Dashboard);
