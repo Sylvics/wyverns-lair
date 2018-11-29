@@ -3,12 +3,14 @@ import './Navigation.css'
 import {Link} from 'react-router-dom'
 import logo from './logo.jpg'
 import {connect} from 'react-redux';
-
+import axios from 'axios';
 class Navigation extends Component {
 
 
-  handleLogout(){
-
+  async handleLogout(){
+    let promise = await axios.get('/auth/logout')
+    console.log(promise.data);
+    
   }
 
     render(){
@@ -17,12 +19,16 @@ class Navigation extends Component {
                 <Link to='/dashboard'>
                 <img className='logo' src={logo} alt="cool" />
                 </Link>
-               {this.props.playerName? <Link to='/settings' style={{textDecoration: 'none', color:'whitesmoke'}}>
-                Welcome Back, {this.props.playerName}
+               {this.props.session.data? <Link to='/settings' style={{textDecoration: 'none', color:'whitesmoke'}}>
+                Welcome Back, {this.props.session.data.player_name}
                 </Link> : ''
                 
             }
-            {this.props.session.data? <button onClick={() => this.handleLogout()}>Logout</button> : ''}
+            {this.props.session.data? 
+                <Link to='/'> <button onClick={() => this.handleLogout()}>Logout</button></Link>
+           
+
+             : ''}
             </div>
         )
     }

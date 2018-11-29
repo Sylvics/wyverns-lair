@@ -13,7 +13,7 @@ class Dashboard extends Component {
         //     this.props.history.push('/')
         // }
     let session = await axios.get('/auth/check')
-    if(session!=='No session found'){
+    if(session.data!=='No session found'){
         this.props.updateSession(session);
         console.log(this.props.session);
     }else{

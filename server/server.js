@@ -3,9 +3,16 @@ const session = require('express-session')
 const massive = require('massive')
 const authController = require('./authController')
 const socket = require('socket.io')
+const creationController = require('./creationController');
 require('dotenv').config();
 const app = express();
 app.use(express.json())
+
+const path = require('path'); // Usually moved to the start of file
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 app.use(session({
@@ -18,10 +25,13 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
     console.log('database connected')
 })
+//Login Endpoints
 app.post('/auth/login', authController.loginPlayer)
 app.post('/auth/register',authController.newPlayer)
 app.get('/auth/logout', authController.logout)
 app.get('/auth/check', authController.checkLogin)
+//Other Endpoints
+app.get('/api/races', creationController.getRaces)
 //Server Generic
 app.listen(SERVER_PORT, () =>{
     console.log(`hatching wyverian eggs on port ${SERVER_PORT}`)
