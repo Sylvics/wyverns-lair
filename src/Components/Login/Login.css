@@ -27,3 +27,6 @@
     flex-direction:column;
     justify-content:space-around;
 }
+.invalid{
+    color:#BD0609;
+}

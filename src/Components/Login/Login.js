@@ -13,8 +13,12 @@ constructor(props){
     this.state = {
         email:'',
         password:'',
-        playerName:''
+        playerName:'',
+        incorrect:false
     }
+}
+componentDidMount(){
+    this.setState({incorrect:false})
 }
 
 handleEmail(e){
@@ -33,7 +37,7 @@ async LoginButton(e){
     this.props.history.push('/dashboard')
    }
    else{
-       
+     this.setState({incorrect:true})
    }
    
     
@@ -49,6 +53,8 @@ async LoginButton(e){
                <div className='emailText'>
                Email<br/>
                <input type='text' onChange={(e)=> this.handleEmail(e)} />
+           <div className='invalid'>{this.state.incorrect?'Invalid Username or Password!':''}</div>
+               
                
                </div>
                <div className='emailText'>

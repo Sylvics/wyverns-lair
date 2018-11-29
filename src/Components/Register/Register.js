@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import {updatePlayer} from '../../ducks/reducer'
+import {connect} from 'react-redux'
 
 
 
@@ -42,8 +44,12 @@ class Register extends Component{
     async submitRegistration(){
         let register = {...this.state}
         let res = await axios.post('/auth/register', register)
-        console.log(res.data)
-        this.props.browser.history.push('/dashboard')
+        if(res.data.status==='loggedIn'){
+            console.log('Player Name', res.data.user);
+            this.props.updatePlayer(res.data.user)
+         
+         this.props.history.push('/dashboard')
+        }
 
     }
     render(){
@@ -98,4 +104,4 @@ class Register extends Component{
         )
     }
 }
-export default Register;
+export default connect(null, {updatePlayer})(Register);
