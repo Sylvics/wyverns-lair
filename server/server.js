@@ -8,11 +8,7 @@ require('dotenv').config();
 const app = express();
 app.use(express.json())
 
-const path = require('path'); // Usually moved to the start of file
-
-app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-});
+app.use( express.static( `${__dirname}/../build` ) );
 
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 app.use(session({
