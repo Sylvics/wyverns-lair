@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './SubNav.css'
+import {connect} from 'react-redux';
 class SubNav extends Component{
 constructor(props){
     super(props);
@@ -11,8 +12,13 @@ constructor(props){
 
     render(){
         return(<div className ='bar'>
-            
+            <div>
+                {this.props.race.race_name?<div>{this.props.race.race_name}</div>:''}
+            </div>
         </div>)
     }
 }
-export default SubNav;
+function mapStateToProps(state){
+    return state;
+}
+export default connect(mapStateToProps)(SubNav);
