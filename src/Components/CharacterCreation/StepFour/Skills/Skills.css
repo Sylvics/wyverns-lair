@@ -1,0 +1,29 @@
+.container{
+    height:30px;
+    width:90%;
+    
+    border-style:solid;
+ 
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:whitesmoke;
+    flex-wrap:wrap;
+    
+    
+}
+.containingOver{
+    width:90%;
+    background-color:rgb(2, 97, 160);
+    margin-top:25px;
+    border-radius:9px;
+}
+button{
+    width:30px;
+}
+.skillpoints{
+    width:55px;
+margin-top:30px;
+height:30px;
+border-radius:8px;
+}

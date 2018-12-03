@@ -1,0 +1,1 @@
+select class_name, class_description from classes

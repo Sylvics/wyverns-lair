@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './Choice.css'
+import './ClassChoice.css'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import axios from 'axios';
-import {updateRace} from '../../../ducks/reducer'
-class Choice extends Component{
+// import {updateRace} from '../../../ducks/reducer'
+class ClassChoice extends Component{
 constructor(props){
     super(props);
     this.state = {
@@ -14,19 +14,18 @@ constructor(props){
 }
 async raceSelection(){
     this.setState({
-        raceName:this.props.name
+        className:this.props.name
     })
-    let res = await axios.get(`/api/races/${this.props.name}`)
-    console.log(res.data)
+
 this.setState({
-    raceData: res.data
+    classData: this.props.desc
 })
-this.props.updateRace(res.data)
+
 }
     render(){
         return(
             <div className='selection'>
-                <Link to='step2' style={{textDecoration: 'none', color:'whitesmoke'}} onClick={() => this.raceSelection()}>
+                <Link to='step4' style={{textDecoration: 'none', color:'whitesmoke'}} onClick={() => this.raceSelection()}>
                           <div  >
         
         <div>{this.props.name}</div>
@@ -42,4 +41,4 @@ this.props.updateRace(res.data)
         )
     }
 }
-export default connect(null, {updateRace})(Choice);
+export default ClassChoice;

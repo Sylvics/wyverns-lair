@@ -1,0 +1,17 @@
+.selection{
+    height:100px;
+    width:40%;
+    border-radius:9px;
+    border-style:solid;
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    
+    background-color:#1C9AEF;
+}
+.selection:hover{
+    transition:1s;
+    background-color:#0E7ECA;
+}

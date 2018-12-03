@@ -29,6 +29,8 @@ massive(CONNECTION_STRING).then(db => {
  //Other Endpoints
  app.get('/api/races', creationController.getRaces)
  app.get('/api/races/:name', creationController.getRace)
+ app.get('/api/classes', creationController.getClasses)
+ app.get('/api/skills', creationController.getSkills)
 //Server Generic
 app.listen(SERVER_PORT, () =>{
     console.log(`hatching wyverian eggs on port ${SERVER_PORT}`)

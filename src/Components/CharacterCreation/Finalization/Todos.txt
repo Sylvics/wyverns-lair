@@ -1,0 +1,6 @@
+     <div className='description'>
+            <h1>Please describe your character here!</h1>
+            <h2>you can include height, weight, Skin color, eye color, Hair type, style, color, </h2>
+            <h1>and anything else that should be known about your character!</h1>
+             <textarea className='descriptionInput' rows='10' cols='80'/>
+            </div>
