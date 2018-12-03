@@ -1,4 +1,11 @@
 .ability{
-    width:900px;
     display:inline;
+    
 }
+.StatRollers{
+    background-color:#26282A;
+    width:400px;
+    height:200px;
+    border-radius:4px;
+}
+
