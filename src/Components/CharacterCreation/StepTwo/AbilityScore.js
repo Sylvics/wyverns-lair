@@ -13,16 +13,16 @@ class AbilityScore extends Component{
     }
     render(){
         return(
-        <div>
+        <div className='StatRollers'>
             <div className='ability'>
 {this.props.abilityName}: {this.props.abilityScore? <div className='ability'>{this.props.abilityScore}+ </div> :'' } <input type='number' className='numInput' /> 
 </div><br/>
 <button onClick={() => this.rollAll()}>Roll {this.props.abilityName}</button>
 <ReactDice rollDone={this.rollDone} outline={true} 
-outlineColor={'#BD0609'} 
+outlineColor={'black'} 
 margin = {10} 
-faceColor={''} 
-dotColor={'#BD0609'}
+faceColor={'#464B35'} 
+dotColor={'black'}
 dieSize={30}
 ref={dice => this.reactDice = dice}/>
         </div>
