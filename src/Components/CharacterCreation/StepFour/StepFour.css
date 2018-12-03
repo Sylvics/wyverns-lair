@@ -1,0 +1,7 @@
+.listContainer{
+display:flex;
+background-color:black;
+align-items:center;
+flex-direction:column;
+justify-content:center;
+}
