@@ -18,7 +18,7 @@
     margin-top:25px;
     border-radius:9px;
 }
-button{
+.skillbuttons{
     width:30px;
 }
 .skillpoints{
@@ -26,4 +26,13 @@ button{
 margin-top:30px;
 height:30px;
 border-radius:8px;
+}
+.skillName{
+    width:200px;
+}
+.skillAbility{
+    width:100px;
+}
+.skillDescription{
+    width:500px;
 }

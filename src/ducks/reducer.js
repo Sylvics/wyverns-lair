@@ -1,11 +1,15 @@
 const initialState = {
 playerName:'',
 session:{},
-race:{}
+race:{},
+abilityScore:{},
+class:{}
 }
 const PLAYERDATA = 'PLAYERDATA'
 const SESSIONDATA = 'SESSIONDATA'
 const RACEDATA = 'RACEDATA'
+const ABDATA = 'ABDATA'
+const CLASSDATA = 'CLASSDATA'
 
 
 export default function reducer(state=initialState, action){
@@ -16,6 +20,10 @@ export default function reducer(state=initialState, action){
         return{...state, session:action.payload}
         case RACEDATA:
         return {...state, race:action.payload}
+        case ABDATA:
+        return {...state, abilityScore:action.payload}
+        case CLASSDATA:
+        return {...state, class:action.payload}
         default:
         return state;
     }
@@ -40,5 +48,19 @@ export function updateRace(raceData){
     return{
         type:RACEDATA,
         payload:raceData
+    }
+}
+export function updateAbilityScore(abscoreData){
+    console.log('ability scores in reducer', abscoreData)
+    return{
+        type:ABDATA,
+        payload:abscoreData
+    }
+}
+export function updateClass(classData){
+    console.log('Class in Reducer')
+    return{
+        type:CLASSDATA,
+        payload:classData
     }
 }
